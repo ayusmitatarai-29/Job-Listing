@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="navbar">
+
+        <div class="logo">JobPortal</div>
+
+        <div class="menu-toggle" id="menuToggle">☰</div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#jobs">Jobs</a>
+            <a href="#companies">Companies</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="saved.html">Saved</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button class="login" id="loginBtn">Login</button>
+            <button class="register" id="registerBtn">Register</button>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- ================= HOME SECTION ================= -->
+<section class="home" id="home">
+    <div class="home-content">
+
+        <!-- Left Text -->
+        <div class="home-text">
+            <h1>Find Your Dream Job Today</h1>
+            <p>
+                Explore thousands of job opportunities with top companies.
+                Build your career with the best job portal platform.
+            </p>
+            <button class="explore-btn">Explore Jobs</button>
+        </div>
+
+        <!-- Right Search -->
+        <div class="search-container">
+
+            <input type="text" id="keyword" placeholder="Search job title or keyword" onkeyup="liveSearch()">
+
+            <input type="text" id="location" placeholder="Location (City or Country)">
+
+            <select id="category">
+                <option value="">Select Category</option>
+                <option>IT</option>
+                <option>Marketing</option>
+                <option>Design</option>
+                <option>Finance</option>
+            </select>
+
+            <select id="experience">
+                <option value="">Experience Level</option>
+                <option>fresher</option>
+                <option>mid</option>
+                <option>exp</option>
+            </select>
+
+            <div class="search-buttons">
+                <button onclick="searchJobs()">Search</button>
+                <button onclick="clearFilters()" class="clear-btn">Reset</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= JOB SECTION ================= -->
+<section class="jobs-section" id="jobs">
+
+    <h2 class="section-title">Latest Jobs</h2>
+
+    <div class="jobs-container" id="jobsContainer"></div>
+
+    <div class="pagination" id="pagination"></div>
+
+</section>
+
+
+<!-- ================= JOB MODAL ================= -->
+<div class="job-modal" id="jobModal">
+
+    <div class="job-modal-content">
+
+        <span class="close-job-modal" id="closeJobModal">&times;</span>
+
+        <h2 id="modalTitle"></h2>
+        <p id="modalCompany"></p>
+        <p id="modalSalary"></p>
+        <p id="modalLocation"></p>
+        <p id="modalLevel"></p>
+        <p id="modalDescription"></p>
+
+    </div>
+
+</div>
+<!------------companies-------------------->
+
+<section class="companies-section" id="companies">
+
+    <h2 class="section-title">Top Hiring Companies</h2>
+
+    <div class="companies-container">
+
+        <div class="company-card">
+            <img src="images/infosys.jpeg" alt="Infosys">
+            <p>Infosys</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/tcs.jpeg" alt="TCS">
+            <p>TCS</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/wipro.jpeg" alt="Wipro">
+            <p>Wipro</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/accenture.jpeg" alt="Accenture">
+            <p>Accenture</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/capgemini.jpeg" alt="Capgemini">
+            <p>Capgemini</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/ibm.jpeg" alt="IBM">
+            <p>IBM</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/cognizant.jpeg" alt="Cognizant">
+            <p>Cognizant</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/oracle.jpeg" alt="Oracle">
+            <p>Oracle</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/zoho.jpeg" alt="Zoho">
+            <p>Zoho</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/tech mahindra.jpeg" alt="Tech Mahindra">
+            <p>Tech Mahindra</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/spcl.jpeg" alt="SPCL">
+            <p>SPCL</p>
+        </div>
+
+        <div class="company-card">
+            <img src="images/bajaj.jpeg" alt="Baja">
+            <p>Bajaj Finance</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-------------------About----------------------------->
+
+<section class="about-section" id="about">
+
+    <h2 class="section-title">About JobPortal</h2>
+
+    <div class="about-content">
+
+        <p>
+            JobPortal is a modern online platform designed to help students and job seekers
+            find their dream careers easily. We connect talented candidates with top hiring
+            companies across multiple industries including IT, Design, Marketing, and Finance.
+            Our mission is to simplify the job search process and provide better career
+            opportunities for freshers and experienced professionals.
+        </p>
+
+        <p>
+            Thousands of students have successfully secured placements through our platform
+            in leading companies. Here are some of our successful candidates placed in
+            top organizations.
+        </p>
+
+    </div>
+
+    <div class="placed-students">
+
+        <div class="student-card">
+            <img src="images/f1.jpeg" alt="Student">
+            <h4>Priya Sharma</h4>
+            <p>Placed at Infosys</p>
+        </div>
+
+        <div class="student-card">
+            <img src="images/m1.jpeg" alt="Student">
+            <h4>Rahul Verma</h4>
+            <p>Placed at TCS</p>
+        </div>
+
+        <div class="student-card">
+            <img src="images/f2.jpeg" alt="Student">
+            <h4>Ananya Das</h4>
+            <p>Placed at Wipro</p>
+        </div>
+
+        <div class="student-card">
+            <img src="images/m2.jpeg" alt="Student">
+            <h4>Amit Kumar</h4>
+            <p>Placed at Capgemini</p>
+        </div>
+
+        <div class="student-card">
+            <img src="images/f3.jpeg" alt="Student">
+            <h4>Neha Singh</h4>
+            <p>Placed at Accenture</p>
+        </div>
+
+        <div class="student-card">
+            <img src="images/m3.jpeg" alt="Student">
+            <h4>Sourav Patel</h4>
+            <p>Placed at SPCL</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= LOGIN MODAL ================= -->
+<div class="login-modal" id="loginModal">
+
+    <div class="login-box">
+
+        <span class="close-btn" id="closeLogin">&times;</span>
+
+        <h2>Login</h2>
+
+        <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+
+            <p>Don't have an account? <a href="#">Register</a></p>
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- ================= REGISTER MODAL ================= -->
+<div class="register-modal" id="registerModal">
+
+    <div class="register-box">
+
+        <span class="close-btn" id="closeRegister">&times;</span>
+
+        <h2>Register</h2>
+
+        <form>
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="password" placeholder="Confirm Password" required>
+
+            <button type="submit">Register</button>
+
+            <p>Already have an account? <a href="#">Login</a></p>
+        </form>
+
+    </div>
+
+</div>
+
+<!------------------Footer-------------------->
+<section class="footer-section" id="contact">
+
+    <div class="footer-container">
+
+        <!-- About -->
+        <div class="footer-box">
+            <h3>JobPortal</h3>
+            <p>
+                JobPortal is a trusted platform connecting job seekers with
+                top companies. Find your dream career with us.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-box">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#jobs">Jobs</a>
+            <a href="#companies">Companies</a>
+            <a href="#about">About</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-box">
+            <h3>Contact</h3>
+            <p>Email: support@jobportal.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>Location: India</p>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-box">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <span>🌐</span>
+                <span>📘</span>
+                <span>🐦</span>
+                <span>📸</span>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 JobPortal. All Rights Reserved.</p>
+    </div>
+
+</section>
+
+
+<!-- ================= JS LINK ================= -->
+<script src="script.js"></script>
+
+</body>
+</html>
